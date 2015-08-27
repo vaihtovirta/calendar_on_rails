@@ -75,5 +75,8 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
+
+  config.host = 'calendar-onrails.herokuapp.com'
+
   config.active_record.dump_schema_after_migration = false
 end

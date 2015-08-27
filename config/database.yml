@@ -10,11 +10,11 @@ development_defaults: &development_defaults
 
 development:
   <<: *development_defaults
-  database: rails_calendar_dev
+  database: calendar_on_rails_dev
 
 test:
   <<: *development_defaults
-  database: rails_calendar_test
+  database: calendar_on_rails_test
 
 staging:
   <<: *defaults

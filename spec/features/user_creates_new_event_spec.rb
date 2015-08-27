@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'User creates new event', js: true do
-  let(:user) { FactoryGirl.create(:user) }
+  let!(:user) { FactoryGirl.create(:user) }
   let(:event_title) { FFaker::Lorem.characters(10) }
 
   before { login_as(user, scope: :user, run_callbacks: false) }

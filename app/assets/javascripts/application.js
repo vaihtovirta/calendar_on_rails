@@ -16,7 +16,6 @@
 //= require tooltipster
 //= require pickadate/picker
 //= require pickadate/picker.date
-//= require vendor/jquery.fseditor-min
 //= require vendor/please-colors
 //= require vex.combined.min.js
 

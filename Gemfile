@@ -53,6 +53,6 @@ group :test do
   gem 'database_cleaner'
 end
 
-group :production, :staging do
-  gem 'unicorn'
+group :production do
+  gem 'puma'
 end

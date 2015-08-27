@@ -15,7 +15,7 @@ require 'sprockets/railtie'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module RailsCalendar
+module CalendarOnRails
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -30,6 +30,9 @@ module RailsCalendar
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+
+    config.app_name = 'Calendar On Rails'
+
     config.active_record.raise_in_transactional_callbacks = true
   end
 end

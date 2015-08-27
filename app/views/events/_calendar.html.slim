@@ -5,7 +5,7 @@
         = date.day
       .events
         ul.events--list
-          = render partial: 'events/calendar_event', collection: calendar_events
+          = render partial: 'events/calendar_event', collection: calendar_events if calendar_events.any?
       .calendar--add-button
         = link_to mat_icon('add', 'icon-small-text'), new_user_event_path(current_user, starts_at: date),
                   class: 'mdl-button mdl-js-button mdl-button--fab add-button--small mdl-shadow--2dp',
