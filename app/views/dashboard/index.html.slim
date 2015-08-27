@@ -1,0 +1,10 @@
+h1.title-center Home
+.mdl-card.mdl-shadow--16dp.no-select
+  .mdl-card__title
+    h2.mdl-card__title-text Welcome to the Rails Calendar
+  .mdl-card__supporting-text
+    | The simpliest calendar directly from your dreams
+  .mdl-card__actions.mdl-card--border
+    = link_to 'Get started with your first event!',
+              new_user_event_path(current_user),
+              class: 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-js-button-colored'

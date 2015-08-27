@@ -1,0 +1,11 @@
+.mdl-cell--middle.mdl-cell--3-col.centered
+  h2 Log in
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .mdl-textfield.mdl-js-textfield
+      = f.input :email, autofocus: true, label:false
+      = f.label :email
+    .mdl-textfield.mdl-js-textfield
+      = f.input :password
+    .mdl-cell--4
+      = f.button :submit, 'Log in',
+                 class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent'

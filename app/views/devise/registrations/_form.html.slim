@@ -1,0 +1,28 @@
+= simple_form_for(resource, as: resource_name,
+                  url: registration_path(resource_name), html: html_options) do |f|
+  .mdl-textfield.mdl-js-textfield
+    = f.input :name, label: false
+    = f.label :name
+  .mdl-textfield.mdl-js-textfield
+    = f.input :email, label: false
+    = f.label :email
+  .mdl-textfield.mdl-js-textfield
+    - if edit_form
+      = f.input :current_password, label: false
+      = f.label :current_password
+  .mdl-textfield.mdl-js-textfield
+    = f.input :password, label: false
+    = f.label :password
+  .mdl-textfield.mdl-js-textfield
+    = f.input :password_confirmation, label: false
+    = f.label :password_confirmation
+  .mdl-textfield
+    .mdl-cell--middle.user-color
+      .user-color--box.mdl-shadow--3dp
+        .text.no-select Click here to generate color
+      = f.input :color, as: :hidden
+  .form-actions
+    .mdl-cell.mdl-cell--6-col.action-buttons
+      = f.button :submit, 'Submit',
+                 class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent btn-main'
+      = delete_button 'Cancel my account', registration_path(resource_name) if edit_form

@@ -1,0 +1,8 @@
+.events--title
+  h1.title-center Events
+
+= render 'events/calendar'
+
+- if rand(20) > 10
+  #modal-tips
+    = render 'shared/tip_card'

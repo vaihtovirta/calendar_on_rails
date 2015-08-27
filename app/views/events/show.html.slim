@@ -1,0 +1,16 @@
+.mdl-grid
+  .mdl-textfield
+    h2= event.title
+  .mdl-textfield
+    b> Created by:
+    .event--user-name style="background-color: #{event.user.color}"
+      = event.user.name
+  .mdl-textfield
+    b> Created:
+    = date_normalized(event.starts_at)
+  .mdl-textfield
+    b> Recurrence:
+    = event.periodicity
+  .mdl-textfield
+    b> Description:
+    = event.description

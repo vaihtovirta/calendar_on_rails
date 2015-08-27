@@ -1,0 +1,4 @@
+= link_to show_or_edit_path(calendar_event), class: 'event-link', data: { modal: true } do
+  .event.tooltip.mdl-shadow--2dp style="background-color: #{calendar_event.user.color}" title=calendar_event.user.name
+    li.event--list-item
+      = calendar_event.title

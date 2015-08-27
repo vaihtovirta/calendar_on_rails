@@ -1,0 +1,4 @@
+.mdl-cell--middle.mdl-cell--3-col.centered
+  h2 Edit profile
+  = render partial: 'devise/registrations/form',
+           locals: { edit_form: true, html_options: { method: :put } }

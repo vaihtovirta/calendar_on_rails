@@ -1,0 +1,89 @@
+.calendar--add-button{
+  position: relative;
+  height: 3em;
+  right: 0.2em;
+}
+
+a.add-button--small {
+  float: right;
+  position: absolute;
+  right: 0.5em;
+  bottom: 0;
+}
+
+.calendar--table td {
+  display: table-cell;
+  vertical-align: inherit;
+  height: 200px;
+  border: 1px solid #babcbf;
+  background-color: white;
+}
+
+.calendar--table td:hover .add-button--small {
+  display: block;
+}
+
+.calendar-header {
+  position: relative;
+  padding-bottom: .7em;
+}
+.calendar-header a {
+  padding: 0.3em;
+  color: black;
+}
+
+.calendar--table{
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+}
+
+tbody tr:nth-child(even)  td { background-color: #eee; }
+
+.calendar--day-main {
+  height: 100%;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.calendar--day-title {
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.calendar-header {
+  font-size: 30px;
+}
+
+.day {
+  padding: 0;
+}
+
+td.day.today {
+  background-color: rgb(245, 232, 21);
+}
+
+.events {
+  margin: auto;
+  height: 50%;
+}
+
+ul.events--list {
+  list-style: none;
+}
+.event {
+  border-radius: 10px;
+  display: inline-block;
+  text-align: -webkit-center;
+  margin: 0 0 0.3em -1.4em;
+  width: 100%;
+  float: left;
+}
+a.event-link{
+  color: #000000;
+}
+li.event--list-item {
+  text-align: center;
+
+}

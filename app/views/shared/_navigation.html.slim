@@ -1,0 +1,19 @@
+nav.mdl-navigation.mdl-layout--large-screen-only
+  - if current_user
+    = link_to 'Events', '', class: 'mdl-navigation__link default-text-color',
+                            id: 'event-menu',
+                            remote: true
+    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect for='event-menu'
+      = link_to 'All events', events_path, class: 'li mdl-menu__item'
+      = link_to 'My events', user_events_path(current_user), class: 'li mdl-menu__item'
+      = link_to 'Add new event', new_user_event_path(current_user), class: 'li mdl-menu__item'
+    = link_to 'My profile', '', class: 'mdl-navigation__link default-text-color',
+                                id: 'my-profile-menu',
+                                remote: true
+    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect for='my-profile-menu'
+      = link_to 'Edit profile', edit_user_registration_path, class: 'li mdl-menu__item'
+      = link_to 'Log out', destroy_user_session_path, class: 'li mdl-menu__item'
+  - else
+    = link_to 'Login', new_user_session_path, class: 'mdl-navigation__link default-text-color'
+    = link_to 'Register', new_user_registration_path, class: 'mdl-navigation__link default-text-color '
+
