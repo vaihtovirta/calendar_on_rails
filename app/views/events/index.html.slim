@@ -3,6 +3,6 @@
 
 = render 'events/calendar'
 
-- if rand(20) > 10
+- if flash.any?
   #modal-tips
     = render 'shared/tip_card'

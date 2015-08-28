@@ -82,7 +82,6 @@ tr {
   overflow: auto;
   margin: 0px auto;
   width: 100%;
-  white-space: nowrap;
   input {
     margin: 1em;
   }
@@ -93,4 +92,9 @@ tr {
 
 .btn-main {
   min-width: 5em;
+}
+
+.error {
+  margin: 30%;
+  color: red;
 }

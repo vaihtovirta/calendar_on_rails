@@ -10,10 +10,6 @@ feature 'User edits event', js: true do
   scenario 'user sees his event with new title' do
     visit events_path
 
-    wait_for_ajax
-
-    close_vex_modal
-
     first('.event--list-item', text: event.title).click
 
     within '#event--form' do

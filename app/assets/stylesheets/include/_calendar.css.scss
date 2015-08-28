@@ -9,6 +9,10 @@ a.add-button--small {
   position: absolute;
   right: 0.5em;
   bottom: 0;
+  background-color: #f4f4f4;
+}
+a.add-button--small:hover {
+  background-color: #c3c3c3
 }
 
 .calendar--table td {
@@ -61,7 +65,7 @@ tbody tr:nth-child(even)  td { background-color: #eee; }
 }
 
 td.day.today {
-  background-color: rgb(245, 232, 21);
+  background-color: #FFCC00;
 }
 
 .events {

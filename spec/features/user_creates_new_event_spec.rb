@@ -9,13 +9,11 @@ feature 'User creates new event', js: true do
   scenario 'user sees his event' do
     visit events_path
 
-    wait_for_ajax
-
-    close_vex_modal
-
     first('.events').hover
 
     first('.calendar--add-button').click_link('add')
+
+    wait_for_ajax
 
     within '#event--form' do
       fill_in 'event[title]', with: event_title
