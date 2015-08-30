@@ -24,10 +24,7 @@ class window.ColorGenerator
     @hiddenColorInput.val(element.css('backgroundColor'))
 
   randomColor: () ->
-    Please.make_color
-      golden: false,
-      saturation: 1,
-      value: 1
+    Please.make_color()
 
 $ ->
   if $('.user-color--box').length

@@ -42,7 +42,8 @@ a.add-button--small:hover {
   padding-bottom: 5%;
 }
 
-tbody tr:nth-child(even)  td { background-color: #eee; }
+tbody td:nth-child(6n) { background-color: #eee; }
+tbody td:nth-child(7n) { background-color: #eee; }
 
 .calendar--day-main {
   height: 100%;
@@ -65,7 +66,13 @@ tbody tr:nth-child(even)  td { background-color: #eee; }
 }
 
 td.day.today {
-  background-color: #FFCC00;
+  background-color: #cde3eb;
+}
+
+.prev-month, .next-month {
+  .calendar--day-title {
+    color: #acacac;
+  }
 }
 
 .events {

@@ -2,7 +2,7 @@
   = month_calendar calendar_options.merge(events: events) do |date, calendar_events|
     .calendar--day-main
       .calendar--day-title
-        = date.day
+        = calendar_date_for(date)
       .events
         ul.events--list
           = render partial: 'events/calendar_event', collection: calendar_events if calendar_events.any?

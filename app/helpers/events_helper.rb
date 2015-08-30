@@ -22,6 +22,10 @@ module EventsHelper
     tips['tips'].sample
   end
 
+  def calendar_date_for(date)
+    (date.day == 1) ? date.strftime('%-d %b') : date.day
+  end
+
   private
 
   def prev_link
