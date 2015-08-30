@@ -16,3 +16,6 @@ password: password
   
 ##Todo
  - More tests
+
+##Caveats
+Tested with Google Chrome, may appearing incorrectly in other browsers.
