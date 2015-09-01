@@ -2,6 +2,8 @@ body, h1, h2, h3 { margin: 0; font-size: 100%; font-weight: normal; }
 
 body { font-family: 'Helvetica Neue', Arial, sans-serif; }
 
+body, html { height: 100%; }
+
 h1 { font-size: 2em; }
 h2 { font-size: 1.5em; }
 h1, h2 { margin: .5em 0; font-weight: bold; }
