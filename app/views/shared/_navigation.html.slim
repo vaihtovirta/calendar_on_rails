@@ -6,7 +6,6 @@ nav.mdl-navigation.mdl-layout--large-screen-only
     ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect for='event-menu'
       = link_to 'All events', events_path, class: 'li mdl-menu__item'
       = link_to 'My events', user_events_path(current_user), class: 'li mdl-menu__item'
-      = link_to 'Add new event', new_user_event_path(current_user), class: 'li mdl-menu__item'
     = link_to 'My profile', '', class: 'mdl-navigation__link default-text-color',
                                 id: 'my-profile-menu',
                                 remote: true
