@@ -16,7 +16,7 @@
 //= require tooltipster
 //= require pickadate/picker
 //= require pickadate/picker.date
-//= require vendor/please-colors
+//= require randomColor
 //= require vex.combined.min.js
 
 //= require application/init

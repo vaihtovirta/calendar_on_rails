@@ -153,6 +153,7 @@ GEM
       sprockets-rails
     rails-assets-jquery (2.1.4)
     rails-assets-material-design-lite (1.0.4)
+    rails-assets-randomColor (0.4.0)
     rails-assets-tooltipster (3.3.0)
       rails-assets-jquery (>= 1.7)
     rails-deprecated_sanitizer (1.0.3)
@@ -279,6 +280,7 @@ DEPENDENCIES
   puma
   rails (= 4.2.3)
   rails-assets-material-design-lite!
+  rails-assets-randomColor!
   rails-assets-tooltipster!
   rails_12factor
   responders (~> 2)

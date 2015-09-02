@@ -29,6 +29,7 @@ gem 'coffee-rails'
 source 'https://rails-assets.org' do
   gem 'rails-assets-material-design-lite'
   gem 'rails-assets-tooltipster'
+  gem 'rails-assets-randomColor'
 end
 
 group :development do
