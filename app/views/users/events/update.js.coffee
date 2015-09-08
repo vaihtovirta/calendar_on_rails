@@ -1,19 +1,11 @@
-eventForm = $('#event--form')
+manager = new window.CalendarManager
 
 <% if event.errors.any? %>
-eventForm.replaceWith( "<%= j(render 'users/events/form', event: event)%>" )
-$('body').find('.datepicker').pickadate()
+manager.onError( "<%= j(render 'users/events/form', event: event)%>" )
 <% else %>
-eventForm.html("<%= j(render 'users/events/form', event: event)%>")
-
-eventForm.prepend("<%= j render 'users/events/messages' %>")
-
-window.location.href = "<%= j(events_path)%>"
-
-$('.form__messages').animate { opacity: 0 }, 2000, ->
-  $(this).remove()
+manager.onSuccessUpdate("<%= j(render 'users/events/form', event: event)%>",
+                        "<%= j render 'users/events/messages' %>",
+                        "<%= j(events_path)%>")
 <% end %>
 
 new window.Pickadate
-
-

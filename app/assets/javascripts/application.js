@@ -23,3 +23,4 @@
 //= require application/modals
 //= require application/pickadate
 //= require application/color_generator
+//= require application/calendar_manager

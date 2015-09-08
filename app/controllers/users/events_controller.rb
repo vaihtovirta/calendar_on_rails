@@ -7,6 +7,7 @@ module Users
 
     expose(:event, attributes: :event_params)
     expose(:events, ancestor: :current_user)
+    expose(:all_events, model: :event) { |default| default.by_date(start_date).map(&:decorate) }
 
     before_action :authenticate_user!
     before_action :redirect_to_events, only: %i(new edit)
