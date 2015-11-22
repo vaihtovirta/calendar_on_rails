@@ -1,6 +1,6 @@
 # Calendar On Rails
 
-Simple ROR-based implementation of calendar with recurring events and multiple users schedules.
+Simple ROR-based calendar with implementation of recurring events and multiple user schedules.
 
 Project's core gems:
 * [simple_calendar](https://github.com/excid3/simple_calendar)
