@@ -1,8 +1,9 @@
 # Calendar On Rails
 
 Simple ROR-based calendar with implementation of recurring events and multiple user schedules.
+![](https://monosnap.com/file/MTmvNXN4qSzzRjpeNrqodl64LuE4v9.png)
 
-Project's core gems:
+##Built with:
 * [simple_calendar](https://github.com/excid3/simple_calendar)
 * [ice_cube](https://github.com/seejohnrun/ice_cube)
 * [devise](https://github.com/plataformatec/devise)
