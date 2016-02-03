@@ -1,7 +1,6 @@
 class Event
   module RecurrenceHandler
     extend ActiveSupport::Concern
-    include IceCube
 
     included do
       scope :recurring_events, -> { where.not(periodicity: 0) }
@@ -10,10 +9,9 @@ class Event
 
     module ClassMethods
       def populate_recurring_events(date)
-        Recurrencer.new(date, recurring_events, periodicities)
-          .populate
+        EventRecurrence::Populator.new(date, recurring_events)
+          .call
           .concat(recurring_once)
-          .flatten
       end
     end
   end

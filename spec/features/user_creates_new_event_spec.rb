@@ -6,7 +6,7 @@ feature 'User creates new event', js: true do
 
   before { login_as(user, scope: :user, run_callbacks: false) }
 
-  scenario 'user sees his event', pending: 'Strange js error related to material-lite' do
+  scenario 'user sees his event' do
     visit events_path
 
     first('.events').hover
