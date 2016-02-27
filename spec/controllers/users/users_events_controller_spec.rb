@@ -19,7 +19,7 @@ describe Users::EventsController do
     it { is_expected.to redirect_to(events_path) }
   end
 
-  describe 'GET #create' do
+  describe 'POST #create' do
     before { post :create, user_id: user.id, event: FactoryGirl.attributes_for(:event) }
     it { is_expected.to respond_with(302) }
   end
@@ -29,7 +29,7 @@ describe Users::EventsController do
     it { is_expected.to redirect_to(events_path) }
   end
 
-  describe 'GET #update' do
+  describe 'POST #update' do
     before do
       put :update, id: event, user_id: user.id,
                    event: FactoryGirl.attributes_for(:event)
