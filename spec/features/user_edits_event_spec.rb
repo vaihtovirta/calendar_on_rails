@@ -19,6 +19,6 @@ feature 'User edits event', js: true do
 
     wait_for_ajax
 
-    expect(page).to have_css '.event--list-item', event_new_title
+    expect(page).to have_css('.event--list-item', text: event_new_title)
   end
 end

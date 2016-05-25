@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.4'
+ruby '2.3.1'
 
 gem 'decent_exposure'
 gem 'devise'
@@ -8,21 +8,20 @@ gem 'dotenv'
 gem 'draper'
 gem 'ice_cube'
 gem 'pg'
-gem 'rails', '4.2.5.1'
+gem 'rails'
 gem 'responders', '~> 2'
-gem 'rollbar', '~> 1.5.3'
 gem 'simple_calendar'
 gem 'simple_form'
+gem 'validates_email_format_of'
 
 # Assets
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'material_icons'
 gem 'pickadate-rails'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 gem 'slim-rails'
-gem 'sprockets-rails', require: 'sprockets/railtie'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 gem 'vex_rails'
 
 source 'https://rails-assets.org' do

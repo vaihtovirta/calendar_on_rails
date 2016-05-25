@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_many :events, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true
+  validates_email_format_of :email
 end

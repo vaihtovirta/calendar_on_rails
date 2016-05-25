@@ -1,24 +1,31 @@
-.calendar--add-button{
+.calendar--add-button {
   position: relative;
+  right: .2em;
+
   height: 3em;
-  right: 0.2em;
 }
 
 a.add-button--small {
-  float: right;
   position: absolute;
-  right: 0.5em;
+  right: .5em;
   bottom: 0;
+
+  float: right;
+
   background-color: #f4f4f4;
 }
+
 a.add-button--small:hover {
-  background-color: #c3c3c3
+  background-color: #c3c3c3;
 }
 
 .calendar--table td {
   display: table-cell;
-  vertical-align: inherit;
+
   height: 200px;
+
+  vertical-align: inherit;
+
   border: 1px solid #babcbf;
   background-color: white;
 }
@@ -29,32 +36,41 @@ a.add-button--small:hover {
 
 .calendar-header {
   position: relative;
+
   padding-bottom: .7em;
 }
 .calendar-header a {
-  padding: 0.3em;
+  padding: .3em;
+
   color: black;
 }
 
-.calendar--table{
-  padding-left: 10%;
+.calendar--table {
   padding-right: 10%;
   padding-bottom: 5%;
+  padding-left: 10%;
 }
 
-tbody td:nth-child(6n) { background-color: #eee; }
-tbody td:nth-child(7n) { background-color: #eee; }
+tbody td:nth-child(6n) {
+  background-color: #eee;
+}
+tbody td:nth-child(7n) {
+  background-color: #eee;
+}
 
 .calendar--day-main {
-  height: 100%;
   overflow: hidden;
+
+  height: 100%;
+
   background-color: transparent;
 }
 
 .calendar--day-title {
-  text-align: right;
-  padding-right: 10px;
   padding-top: 10px;
+  padding-right: 10px;
+
+  text-align: right;
 }
 
 .calendar-header {
@@ -69,32 +85,37 @@ td.day.today {
   background-color: #cde3eb;
 }
 
-.prev-month, .next-month {
+.prev-month,
+.next-month {
   .calendar--day-title {
     color: #acacac;
   }
 }
 
 .events {
-  margin: auto;
   height: 50%;
+  margin: auto;
 }
 
 ul.events--list {
   list-style: none;
 }
 .event {
-  border-radius: 10px;
   display: inline-block;
-  text-align: -webkit-center;
-  margin: 0 0 0.3em -1.4em;
-  width: 100%;
   float: left;
+
+  width: 100%;
+  margin: 0 0 .3em -1.4em;
+
+  text-align: -webkit-center;
+
+  border-radius: 10px;
 }
-a.event-link{
-  color: #000000;
+
+a.event-link {
+  color: #000;
 }
+
 li.event--list-item {
   text-align: center;
-
 }

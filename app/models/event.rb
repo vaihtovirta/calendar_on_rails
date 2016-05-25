@@ -1,6 +1,5 @@
 class Event < ActiveRecord::Base
   extend SimpleCalendar
-  include RecurrenceHandler
 
   has_calendar
 
@@ -11,9 +10,12 @@ class Event < ActiveRecord::Base
 
   enum periodicity: { once: 0, every_day: 1, every_week: 2, every_month: 3, yearly: 4 }
 
-  def self.by_date(date)
-    return if date.nil?
+  scope :recurring_events, -> { where.not(periodicity: 0) }
+  scope :recurring_once, -> { where(periodicity: 0) }
 
-    populate_recurring_events(date)
+  def self.by_date(date)
+    return unless date.present?
+
+    EventRecurrence::Populator.new(date).call.concat(recurring_once)
   end
 end
