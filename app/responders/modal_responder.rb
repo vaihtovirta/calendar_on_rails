@@ -4,7 +4,7 @@ class ModalResponder < ActionController::Responder
 
   def render(*args)
     options = args.extract_options!
-    options.merge! layout: modal_layout if request.xhr?
+    options[:layout] = modal_layout if request.xhr?
     controller.render(*args, options)
   end
 

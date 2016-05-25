@@ -21,6 +21,6 @@ feature 'User creates new event', js: true do
       click_button('Submit')
     end
 
-    expect(page).to have_css '.event--list-item', event_title
+    expect(page).to have_css('.event--list-item', text: event_title)
   end
 end

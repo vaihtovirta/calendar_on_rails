@@ -17,7 +17,8 @@ html class='no-js' lang='en'
     .layout-layer.mdl-layout.mdl-js-layout
       header.mdl-layout__header.mdl-layout__header--transparent.default-text-color.no-select
         .mdl-layout__header-row
-          span.mdl-layout-title.pull-left= "Today is #{date_normalized(Time.now)}"
+          span.mdl-layout-title.pull-left
+            = link_to "Today is #{date_normalized(Time.now)}", root_path
           .mdl-layout-spacer
           = render 'shared/navigation'
       main.mdl-layout__content
@@ -27,4 +28,3 @@ html class='no-js' lang='en'
     = javascript_include_tag :application
 
   #modal-backyard
-

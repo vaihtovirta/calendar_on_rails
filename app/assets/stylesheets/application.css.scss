@@ -3,7 +3,6 @@
 //= require tooltipster/themes/tooltipster-shadow
 //= require pickadate/classic
 //= require pickadate/classic.date
-//= require vendor/fseditor
 //= require vex.css
 //= require vex-theme-flat-attack
 
@@ -15,6 +14,6 @@ $color-primary-dark: $palette-blue-grey-100;
 $color-accent: $palette-blue-500;
 
 @import 'material-design-lite/src/material-design-lite';
-@import 'include/_overrides';
-@import 'include/_custom';
-@import 'include/_calendar';
+@import 'include/overrides';
+@import 'include/custom';
+@import 'include/calendar';
