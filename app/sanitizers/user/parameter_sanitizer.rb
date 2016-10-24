@@ -1,13 +1,19 @@
 class User
   class ParameterSanitizer < Devise::ParameterSanitizer
-    def sign_up
-      default_params.permit(:name, :email, :password,
-                            :password_confirmation, :color)
-    end
+    DEFAULT_PARAMS = %i(
+      color
+      email
+      name
+      current_password
+      password
+      password_confirmation
+    ).freeze
 
-    def account_update
-      default_params.permit(:name, :email, :password, :password_confirmation,
-                            :current_password, :color)
+    def initialize(*)
+      super
+
+      permit(:sign_up, keys: DEFAULT_PARAMS)
+      permit(:account_update, keys: DEFAULT_PARAMS)
     end
   end
 end

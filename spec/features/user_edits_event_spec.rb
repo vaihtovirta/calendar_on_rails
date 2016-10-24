@@ -1,24 +1,27 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'User edits event', js: true do
-  let!(:user) { FactoryGirl.create(:user) }
-  let!(:event) { FactoryGirl.create(:event, user: user, periodicity: 2) }
-  let(:event_new_title) { FFaker::Lorem.characters(10) }
+feature "User edits event", js: true do
+  let!(:user) { create(:user) }
+  let!(:event) { create(:event, user: user, periodicity: 2) }
+  let(:event_new_title) { "New Event Name" }
 
   before { login_as(user, scope: :user, run_callbacks: false) }
 
-  scenario 'user sees his event with new title' do
-    visit events_path
+  def click_on_event
+    first(".event--list-item", text: event.title).click
+  end
 
-    first('.event--list-item', text: event.title).click
-
-    within '#event--form' do
-      fill_in 'event[title]', with: event_new_title
-      click_button('Submit')
-    end
-
+  def edit_event_and_submit
+    fill_in "event[title]", with: event_new_title
+    click_button("Submit")
     wait_for_ajax
+  end
 
-    expect(page).to have_css('.event--list-item', text: event_new_title)
+  scenario "user sees his event with new title" do
+    visit events_path
+    click_on_event
+    edit_event_and_submit
+
+    expect(page).to have_css(".event--list-item", text: event_new_title)
   end
 end

@@ -4,11 +4,21 @@ class EventDecorator < Draper::Decorator
 
   decorates_association :user
 
-  def periodicity
-    object.periodicity.titleize.downcase
-  end
+  alias event object
 
   def description
-    object.description.present? ? object.description : 'No description'
+    event.description.presence || "No description"
+  end
+
+  def periodicity
+    event.periodicity.titleize.downcase
+  end
+
+  def show_or_edit_path
+    if event.user == current_user
+      edit_user_event_path(current_user, event)
+    else
+      event_path(event)
+    end
   end
 end

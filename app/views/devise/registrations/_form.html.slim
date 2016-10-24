@@ -25,4 +25,4 @@
     .mdl-cell.mdl-cell--6-col.action-buttons
       = f.button :submit, 'Submit',
                  class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent btn-main'
-      = delete_button 'Cancel my account', registration_path(resource_name) if edit_form
+      = app_helper.delete_button 'Cancel my account', registration_path(resource_name) if edit_form
