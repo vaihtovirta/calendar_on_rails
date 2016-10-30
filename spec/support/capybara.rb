@@ -1,4 +1,4 @@
-require 'capybara/poltergeist'
+require "capybara/poltergeist"
 
 Capybara.configure do |config|
   config.javascript_driver = :poltergeist

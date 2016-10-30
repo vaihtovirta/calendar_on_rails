@@ -17,6 +17,6 @@ module CapybaraHelpers
   private
 
   def finished_all_ajax_requests?
-    page.evaluate_script('jQuery.active').zero?
+    page.evaluate_script("jQuery.active").zero?
   end
 end

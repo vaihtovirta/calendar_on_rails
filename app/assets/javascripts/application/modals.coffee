@@ -8,7 +8,7 @@ class window.VexModal
 
   onSuccessRequest: () ->
     $(document).on 'ajax:success',
-      'form[data-modal]', (event, data, status, xhr) =>
+      'form[data-modal]', (event, data, status, xhr) ->
         url = xhr.getResponseHeader('Location')
         if url
           window.location = url
@@ -37,5 +37,3 @@ class window.VexModal
 
 $ ->
   new window.VexModal
-
-

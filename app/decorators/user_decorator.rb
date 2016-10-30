@@ -2,9 +2,11 @@ class UserDecorator < Draper::Decorator
   include Draper::LazyHelpers
   delegate_all
 
-  def name
-    return 'You' if object == current_user
+  alias user object
 
-    object.name || object.email
+  def name
+    return "You" if user == current_user
+
+    user.name || user.email
   end
 end

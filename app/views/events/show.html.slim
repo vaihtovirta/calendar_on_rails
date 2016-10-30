@@ -7,7 +7,7 @@
       = event.user.name
   .mdl-textfield
     b> Created:
-    = date_normalized(event.starts_at)
+    = app_helper.date_normalized(event.starts_at)
   .mdl-textfield
     b> Recurrence:
     = event.periodicity

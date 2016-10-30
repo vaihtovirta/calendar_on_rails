@@ -18,7 +18,7 @@ html class='no-js' lang='en'
       header.mdl-layout__header.mdl-layout__header--transparent.default-text-color.no-select
         .mdl-layout__header-row
           span.mdl-layout-title.pull-left
-            = link_to "Today is #{date_normalized(Time.now)}", root_path
+            = link_to "Today is #{app_helper.date_normalized(Time.now)}", root_path
           .mdl-layout-spacer
           = render 'shared/navigation'
       main.mdl-layout__content

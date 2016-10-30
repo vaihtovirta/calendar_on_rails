@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  expose(:show_tip)
+  expose :show_tip
+  expose :app_helper, -> { SharedHelper.new }
 
   def respond_modal_with(*args, &blk)
     options = args.extract_options!
@@ -14,11 +15,11 @@ class ApplicationController < ActionController::Base
 
   private
 
-  decent_configuration do
-    strategy DecentExposure::StrongParametersStrategy
-  end
-
   def devise_parameter_sanitizer
-    User::ParameterSanitizer.new(User, :user, params)
+    if resource_class == User
+      User::ParameterSanitizer.new(User, :user, params)
+    else
+      super
+    end
   end
 end

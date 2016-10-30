@@ -1,4 +1,4 @@
-class window.ColorGenerator
+class ColorGenerator
   constructor: ->
     @userColorBox = $('.user-color--box')
     @hiddenColorInput = $('.user-color input')
@@ -28,4 +28,4 @@ class window.ColorGenerator
 
 $ ->
   if $('.user-color--box').length
-    new window.ColorGenerator
+    new ColorGenerator

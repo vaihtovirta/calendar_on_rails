@@ -1,21 +1,19 @@
 module Users
   class EventsController < ApplicationController
-    include TimeHandler
+    include TimeParamsHandler
 
     respond_to :html
     respond_to :js, only: %i(create update)
 
-    expose(:event, attributes: :event_params)
-    expose(:events, ancestor: :current_user)
-    expose(:all_events, model: :event) { |default| default.by_date(start_date).map(&:decorate) }
+    expose :calendar, -> { CalendarHelper.new(events) }
+    expose :event
+    expose :events, -> { current_user.events.by_date(start_date).map(&:decorate) }
 
     before_action :authenticate_user!
     before_action :redirect_to_events, only: %i(new edit)
 
     def index
-      self.events = events.by_date(start_date).map(&:decorate)
-
-      respond_with events, template: 'events/index'
+      respond_with events, template: "events/index"
     end
 
     def new
@@ -36,7 +34,7 @@ module Users
     end
 
     def update
-      event.save
+      event.update(event_params)
 
       respond_modal_with event, location: events_path(start_date: event_start_time_param)
     end
@@ -54,7 +52,7 @@ module Users
     end
 
     def event_start_time_param
-      event.starts_at.strftime('%Y-%m-%d')
+      event.starts_at.strftime("%Y-%m-%d")
     end
 
     def event_params

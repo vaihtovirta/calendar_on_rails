@@ -1,32 +1,54 @@
+Rails:
+  Enabled: true
+
 AllCops:
   TargetRubyVersion: 2.3
+  DisplayCopNames: true
   Exclude:
-    - '.bundle/**/*'
-    - 'bin/**/*'
-    - 'config/**/*'
-    - 'db/**/*'
-    - 'lib/tasks/**/*'
-    - 'app/controllers/users/confirmations_controller.rb'
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'lib/extensions/simple_form/inputs/array_input.rb'
-    - 'vendor/assets/**/**/*'
-    - 'spec/factories/**/*'
+    - bin/**/*
+    - db/**/*
+    - lib/templates/**/*
+    - vendor/**/*
 
-Documentation:
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
   Enabled: false
 
-Metrics/LineLength:
-  Max: 110
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+
+Style/CollectionMethods:
+  Enabled: true
 
 Style/SymbolArray:
+  Description: 'Use %i or %I for arrays of symbols.'
   Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  ConsistentQuotesInMultiline: true
+
+Metrics/LineLength:
+  Description: 'Limit lines to 120 characters.'
+  Max: 120
+
+Lint/EndAlignment:
+  AlignWith: variable
+  SupportedStyles:
+    - keyword
+    - variable
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+  SupportedStyles:
+    - with_first_parameter
+    - with_fixed_indentation
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/RedundantFreeze:
-  Enabled: false
+Style/StringMethods:
+  Enabled: true
 
-Metrics/AbcSize:
-  Exclude:
-    - 'test/**/*'
+Rails/HttpPositionalArguments:
+  Enabled: false
