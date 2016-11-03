@@ -15,10 +15,6 @@ module Events
 
     private
 
-    def events_scope
-      recurring_events.where(starts_at: Range.new(*month_interval))
-    end
-
     def month_interval
       @month_interval ||= [
         date.beginning_of_month.beginning_of_week,
@@ -27,7 +23,7 @@ module Events
     end
 
     def populate_events
-      events_scope.flat_map do |recurring_event|
+      recurring_events.flat_map do |recurring_event|
         Events::CollectionBuilder
           .new(recurring_event, month_interval)
           .call
