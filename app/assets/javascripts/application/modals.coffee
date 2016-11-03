@@ -1,10 +1,8 @@
 class window.VexModal
   constructor: () ->
     vex.defaultOptions.className = 'vex-theme-flat-attack'
-    @tips = $('#modal-tips')
     @modalOnClick()
     @onSuccessRequest()
-    @tipAlert()
 
   onSuccessRequest: () ->
     $(document).on 'ajax:success',
@@ -30,10 +28,6 @@ class window.VexModal
       $.get location, (data) =>
         @showModal(data)
         new window.Pickadate
-
-  tipAlert: () ->
-    if @tips.length
-      @showModal(@tips.html())
 
 $ ->
   new window.VexModal
