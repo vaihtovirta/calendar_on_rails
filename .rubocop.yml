@@ -1,8 +1,5 @@
-Rails:
-  Enabled: true
-
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.6
   DisplayCopNames: true
   Exclude:
     - bin/**/*
@@ -32,13 +29,7 @@ Metrics/LineLength:
   Description: 'Limit lines to 120 characters.'
   Max: 120
 
-Lint/EndAlignment:
-  AlignWith: variable
-  SupportedStyles:
-    - keyword
-    - variable
-
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
   SupportedStyles:
     - with_first_parameter
@@ -49,6 +40,3 @@ Style/FrozenStringLiteralComment:
 
 Style/StringMethods:
   Enabled: true
-
-Rails/HttpPositionalArguments:
-  Enabled: false

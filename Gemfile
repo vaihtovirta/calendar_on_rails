@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.3.1"
+ruby "2.6.3"
 
 gem "decent_exposure"
 gem "devise"
@@ -9,7 +9,8 @@ gem "draper"
 gem "ice_cube"
 gem "pg"
 gem "puma"
-gem "rails", "~> 4.2.7.1"
+gem "puma"
+gem "rails", "~> 4.2"
 gem "responders", "~> 2"
 gem "simple_calendar", "~> 1"
 gem "simple_form"
@@ -49,9 +50,9 @@ group :development, :test do
 end
 
 group :test do
+  gem "apparition"
   gem "capybara"
   gem "database_cleaner"
-  gem "poltergeist"
   gem "rspec-rails"
   gem "shoulda-matchers"
 end
