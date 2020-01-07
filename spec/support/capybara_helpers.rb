@@ -17,6 +17,8 @@ module CapybaraHelpers
   private
 
   def finished_all_ajax_requests?
+    return if page.evaluate_script("typeof jQuery == 'undefined'")
+
     page.evaluate_script("jQuery.active").zero?
   end
 end

@@ -9,9 +9,12 @@ feature "User edits event", js: true do
 
   def click_on_event
     first(".event--list-item", text: event.title).click
+    wait_for_ajax
   end
 
   def edit_event_and_submit
+    expect(page).to have_text("Edit event")
+    expect(page).to have_text("yearly")
     fill_in "event[title]", with: event_new_title
     click_button("Submit")
     wait_for_ajax

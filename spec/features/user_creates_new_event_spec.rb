@@ -11,6 +11,10 @@ feature "User creates new event", js: true do
   end
 
   def fill_form_and_submit
+    expect(page).to have_css("#event--form")
+    expect(page).to have_text("New event")
+    expect(page).to have_text("yearly")
+
     fill_in "event[title]", with: event_title
     fill_in "event[description]", with: FFaker::Lorem.sentence
     click_button("Submit")
@@ -23,9 +27,8 @@ feature "User creates new event", js: true do
     visit events_path
 
     click_event_plus
-    expect(page).to have_css("#event--form")
-
     fill_form_and_submit
+
     expect(page).to have_css(".event--list-item", text: event_title)
   end
 end
