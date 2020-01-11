@@ -35,25 +35,26 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "bullet"
+  gem "dotenv-rails"
+  gem "rubocop", require: false
 end
 
 group :development, :test do
   gem "brakeman"
   gem "bundler-audit"
-  gem "dotenv-rails"
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "ffaker"
   gem "letter_opener"
   gem "pry-rails"
-  gem "rubocop", require: false
 end
 
 group :test do
-  gem "apparition"
   gem "capybara"
   gem "database_cleaner"
   gem "rspec-rails"
+  gem "selenium-webdriver"
   gem "shoulda-matchers"
+  gem "webdrivers"
 end
 
 group :production do
