@@ -20,7 +20,7 @@ describe Users::EventsController do
   end
 
   describe "POST #create" do
-    before { post :create, user_id: user.id, event: FactoryGirl.attributes_for(:event) }
+    before { post :create, user_id: user.id, event: FactoryBot.attributes_for(:event) }
 
     it { is_expected.to respond_with(302) }
   end
@@ -36,7 +36,7 @@ describe Users::EventsController do
       {
         id: event,
         user_id: user.id,
-        event: FactoryGirl.attributes_for(:event).merge(starts_at: event.starts_at)
+        event: FactoryBot.attributes_for(:event).merge(starts_at: event.starts_at)
       }
     end
 
