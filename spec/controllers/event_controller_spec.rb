@@ -14,7 +14,7 @@ describe EventsController do
   end
 
   describe "GET #show" do
-    before { get :show, id: event }
+    before { get :show, params: { id: event } }
     it { is_expected.to render_template("show") }
   end
 end
