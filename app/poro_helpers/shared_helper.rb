@@ -7,9 +7,9 @@ class SharedHelper
 
   def delete_button(title, path)
     link_to title, path,
-      data: { confirm: "Are you sure?" },
-      method: :delete,
-      class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--red-800"
+            data: { confirm: "Are you sure?" },
+            method: :delete,
+            class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--red-800"
   end
 
   def mat_icon(name, klass = "")

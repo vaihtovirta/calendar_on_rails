@@ -1,8 +1,5 @@
 module Events
   class Populator
-    attr_reader :date
-    private :date
-
     delegate :recurring_events, to: "Event"
 
     def initialize(date)
@@ -14,6 +11,7 @@ module Events
     end
 
     private
+    attr_reader :date
 
     def month_interval
       @month_interval ||= [
