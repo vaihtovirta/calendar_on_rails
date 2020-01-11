@@ -1,6 +1,6 @@
 module CapybaraHelpers
   def send_esc
-    keypress_script = 'var e = $.Event(\'keydown\', { keyCode: 27 }); $(\'body\').trigger(e);'
+    keypress_script = "var e = $.Event('keydown', { keyCode: 27 }); $('body').trigger(e);"
     page.execute_script(keypress_script)
   end
 
