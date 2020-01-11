@@ -3,14 +3,14 @@ module Users
     include TimeParamsHandler
 
     respond_to :html
-    respond_to :js, only: %i(create update)
+    respond_to :js, only: %i[create update]
 
     expose :calendar, -> { CalendarHelper.new(events) }
     expose :event
     expose :events, -> { current_user.events.by_date(start_date).map(&:decorate) }
 
     before_action :authenticate_user!
-    before_action :redirect_to_events, only: %i(new edit)
+    before_action :redirect_to_events, only: %i[new edit]
 
     def index
       respond_with events, template: "events/index"

@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :events,
-      controller: "users/events",
-      only: %i(create destroy edit index new update)
+              controller: "users/events",
+              only: %i[create destroy edit index new update]
   end
 
-  resources :events, only: %i(index show)
+  resources :events, only: %i[index show]
 end

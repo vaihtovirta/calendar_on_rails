@@ -1,13 +1,13 @@
 class User
   class ParameterSanitizer < Devise::ParameterSanitizer
-    DEFAULT_PARAMS = %i(
+    DEFAULT_PARAMS = %i[
       color
       email
       name
       current_password
       password
       password_confirmation
-    ).freeze
+    ].freeze
 
     def initialize(*)
       super
