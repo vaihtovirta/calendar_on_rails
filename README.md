@@ -1,6 +1,6 @@
 # Calendar On Rails
 
-[ ![Codeship Status for vaihtovirta/calendar_on_rails](https://codeship.com/projects/873c4d40-2ff5-0133-67fb-468561e42530/status?branch=master)](https://codeship.com/projects/99549)
+[![Build Status](https://travis-ci.org/vaihtovirta/calendar_on_rails.svg?branch=master)](https://travis-ci.org/vaihtovirta/calendar_on_rails)
 
 Simple ROR-based calendar with implementation of recurring events and multiple user schedules.
 ![](https://monosnap.com/file/MTmvNXN4qSzzRjpeNrqodl64LuE4v9.png)
