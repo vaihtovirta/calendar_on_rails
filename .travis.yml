@@ -1,13 +1,14 @@
-addons:
-  postgresql: 9.6
 dist: trusty
 language: ruby
 bundler_args: --without development:production
 cache: bundler
+services:
+  - postgresql
 addons:
+  postgresql: "9.6"
   chrome: stable
 before_script:
   - bundle exec rails runner "Webdrivers::Chromedriver.update"
 script:
-  - bundle exec rake db:test:prepare
+  - bundle exec rails db:create db:test:prepare
   - bundle exec rspec

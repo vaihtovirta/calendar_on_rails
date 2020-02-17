@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 
   has_calendar
 
-  belongs_to :user
+  belongs_to :user, optional: true
 
   validates :title, :starts_at, presence: true
   validates :title, length: { minimum: 5, maximum: 20 }
