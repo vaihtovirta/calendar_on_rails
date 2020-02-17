@@ -16,6 +16,8 @@ Bundler.require(*Rails.groups)
 
 module CalendarOnRails
   class Application < Rails::Application
+    config.load_defaults "6.0"
+
     config.app_name = "Calendar On Rails"
   end
 end
