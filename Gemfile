@@ -11,7 +11,7 @@ gem "pg"
 gem "puma"
 gem "rails", "~> 6"
 gem "responders", "~> 3"
-gem "simple_calendar", "~> 1"
+gem "simple_calendar", "~> 2"
 gem "simple_form"
 gem "validates_email_format_of"
 
