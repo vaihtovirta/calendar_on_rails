@@ -12,13 +12,4 @@ class CalendarHelper
   def date_for(date)
     date.day == 1 ? date.strftime("%-d %b") : date.day
   end
-
-  def options
-    {
-      events: events,
-      header: { class: "calendar-header title-center" },
-      table: { class: "calendar--table" },
-      tr: { class: "calendar-row" }
-    }
-  end
 end

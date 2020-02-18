@@ -1,5 +1,5 @@
 #calendar
-  = month_calendar calendar.options do |date, calendar_events|
+  = month_calendar events: events do |date, calendar_events|
     .calendar--day-main
       .calendar--day-title
         = calendar.date_for(date)
