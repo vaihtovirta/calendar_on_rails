@@ -1,9 +1,7 @@
 class Event < ActiveRecord::Base
-  extend SimpleCalendar
-
-  has_calendar
-
   belongs_to :user, optional: true
+
+  alias_attribute :start_time, :starts_at
 
   validates :title, :starts_at, presence: true
   validates :title, length: { minimum: 5, maximum: 20 }
