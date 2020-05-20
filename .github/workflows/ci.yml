@@ -1,0 +1,45 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:11
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: calendar_on_rails_test
+          POSTGRES_PASSWORD: password
+        ports: ['5432:5432']
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+      - uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Run bundler
+        run: |
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3 --without development:production
+      - name: Build and run tests
+        env:
+          DB_USER: postgres
+          DB_PASSWORD: password
+          RAILS_ENV: test
+        run: |
+          bundle exec rails db:create db:test:prepare
+          bundle exec rspec
