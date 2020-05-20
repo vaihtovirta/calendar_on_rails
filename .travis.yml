@@ -6,9 +6,9 @@ services:
   - postgresql
 addons:
   postgresql: "9.6"
-  chrome: stable
+  firefox: "latest"
 before_script:
-  - bundle exec rails runner "Webdrivers::Chromedriver.update"
+  - bundle exec rails runner "Webdrivers::Geckodriver.update"
 script:
   - bundle exec rails db:create db:test:prepare
   - bundle exec rspec
