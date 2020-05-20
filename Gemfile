@@ -52,7 +52,7 @@ group :test do
   gem "capybara"
   gem "database_cleaner"
   gem "rails-controller-testing"
-  gem "rspec-rails", "~> 4.0.0"
+  gem "rspec-rails", "~> 4.0.1"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
   gem "webdrivers"
