@@ -272,7 +272,7 @@ GEM
       activesupport (>= 4.2.0)
     simple_calendar (2.3.0)
       rails (>= 3.0)
-    simple_form (5.0.2)
+    simple_form (5.0.3)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     slim (4.0.1)
