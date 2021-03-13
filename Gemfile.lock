@@ -77,7 +77,7 @@ GEM
       debug_inspector (>= 0.0.1)
     brakeman (5.0.0)
     builder (3.2.4)
-    bullet (6.1.0)
+    bullet (6.1.4)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     bundler-audit (0.7.0.1)
@@ -303,7 +303,7 @@ GEM
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.7.0)
-    uniform_notifier (1.13.0)
+    uniform_notifier (1.14.1)
     validates_email_format_of (1.6.3)
       i18n
     vex_rails (0.2.0)
