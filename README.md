@@ -10,8 +10,10 @@ Simple ROR-based calendar with implementation of recurring events and multiple u
 * [ice_cube](https://github.com/seejohnrun/ice_cube)
 * [devise](https://github.com/plataformatec/devise)
 
-You can try it on [Heroku](https://calendar-onrails.herokuapp.com/).
-Test account:
+# Test account
+
+[Heroku](https://calendar-onrails.herokuapp.com/)
+
 ```
 login: user@example.com
 password: password
@@ -21,4 +23,4 @@ password: password
  - More tests
 
 ## Caveats
-Tested with Google Chrome, may appearing incorrectly in other browsers.
+Tested with Google Chrome, may appear incorrectly in other browsers.
