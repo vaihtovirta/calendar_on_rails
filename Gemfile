@@ -36,7 +36,6 @@ group :development do
   gem "binding_of_caller"
   gem "bullet"
   gem "dotenv-rails"
-  gem "rubocop", require: false
 end
 
 group :development, :test do
@@ -46,6 +45,7 @@ group :development, :test do
   gem "ffaker"
   gem "letter_opener"
   gem "pry-rails"
+  gem "rubocop", require: false
 end
 
 group :test do
