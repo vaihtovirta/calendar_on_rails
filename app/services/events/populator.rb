@@ -11,6 +11,7 @@ module Events
     end
 
     private
+
     attr_reader :date
 
     def month_interval
