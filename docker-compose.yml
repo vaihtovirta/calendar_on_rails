@@ -1,0 +1,42 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+      args:
+        - BUNDLE_WITHOUT=production
+    command: /usr/src/app/docker/server
+    depends_on:
+      - db
+    env_file:
+      - .env
+    environment:
+      - RAILS_ENV=development
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+      - bundle_cache:/bundle
+
+  app_test:
+    build:
+      context: .
+      args:
+        - BUNDLE_WITHOUT=production
+    depends_on:
+      - db
+    environment:
+      - RAILS_ENV=test
+    env_file:
+      - .env
+    volumes:
+      - .:/usr/src/app
+      - bundle_cache:/bundle
+
+  db:
+    image: postgres:13-alpine
+    env_file:
+      - .env
+
+volumes:
+  bundle_cache:
