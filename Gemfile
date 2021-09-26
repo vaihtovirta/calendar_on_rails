@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.7.2"
+ruby "3.0.2"
 
 gem "decent_exposure"
 gem "devise"

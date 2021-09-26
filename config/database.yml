@@ -1,16 +1,16 @@
 defaults: &defaults
+  host: <%= ENV['DATABASE_HOST'] %>
+  user: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   adapter: postgresql
   encoding: unicode
 
 development_defaults: &development_defaults
   <<: *defaults
-  user: <%= ENV['DB_USER'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: localhost
 
 development:
   <<: *development_defaults
-  database: calendar_on_rails_dev
+  database: calendar_on_rails_development
 
 test:
   <<: *development_defaults
