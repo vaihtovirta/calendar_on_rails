@@ -11,18 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     services:
       db:
-        image: postgres:11
+        image: postgres:12
         env:
           POSTGRES_USER: postgres
-          POSTGRES_DB: calendar_on_rails_test
           POSTGRES_PASSWORD: password
+          POSTGRES_DB: calendar_on_rails_test
         ports: ['5432:5432']
     steps:
       - uses: actions/checkout@v1
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: 3.0.2
       - uses: actions/cache@v1
         with:
           path: vendor/bundle
@@ -40,8 +40,9 @@ jobs:
           bundle exec rubocop
       - name: Build and run tests
         env:
-          DB_USER: postgres
-          DB_PASSWORD: password
+          DATABASE_HOST: 127.0.0.1
+          DATABASE_USER: postgres
+          DATABASE_PASSWORD: password
           RAILS_ENV: test
         run: |
           bundle exec rails db:create db:test:prepare
